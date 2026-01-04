@@ -1,2 +1,2 @@
 # hip-assessment
-this is the assessment
+this is the assessment repository
