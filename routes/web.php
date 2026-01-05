@@ -12,22 +12,28 @@ Route::get('/', function () {
 });
 
 Route::prefix('admin')->group(function () {
-    Route::get('login', [AdminAuthController::class, 'loginForm'])->name('login.form');
-    Route::post('login', [AdminAuthController::class, 'login'])->name('login.submit');
+    Route::get('login', [AdminAuthController::class, 'loginForm'])->name('admin.login.form');
+    Route::post('login', [AdminAuthController::class, 'login'])->name('admin.login.submit');
+    Route::post('logout', [AdminAuthController::class, 'logout'])->name('admin.logout');
 
-    Route::get('register', [AdminAuthController::class, 'registerForm'])->name('register.form');
-    Route::post('register', [AdminAuthController::class, 'register'])->name('register.submit');
+    Route::get('register', [AdminAuthController::class, 'registerForm'])->name('admin.register.form');
+    Route::post('register', [AdminAuthController::class, 'register'])->name('admin.register.submit');
 
    
-    Route::get('dashboard', [AdminDashboardController::class,'getDashboardData'])->middleware('auth:admin');
+    Route::get('dashboard', [AdminDashboardController::class,'getDashboard'])->name('admin.dashboard')->middleware('auth:admin');
+    // Route::get('dashboard', [AdminDashboardController::class,'getDashboard'])->middleware('auth:admin');
     
 });
 
 Route::prefix('customer')->group(function () {
-    Route::get('login', [CustomerAuthController::class, 'loginForm']);
-    Route::post('login', [CustomerAuthController::class, 'login']);
+    Route::get('login', [CustomerAuthController::class, 'loginForm'])->name('customer.login.form');
+    Route::post('login', [CustomerAuthController::class, 'login'])->name('customer.login.submit');
+    Route::post('logout', [CustomerAuthController::class, 'logout'])->name('custoemer.logout');
 
-    Route::get('dashboard', [CustomerDashboardController::class,'getDashboardData'])->middleware('auth:customer');
+    Route::get('register', [CustomerAuthController::class, 'registerForm'])->name('customer.register.form');
+    Route::post('register', [CustomerAuthController::class, 'register'])->name('customer.register.submit');
+
+    Route::get('dashboard', [CustomerDashboardController::class,'getDashboardData'])->name('customer.dashboard')->middleware('auth:customer');
     
 });
 

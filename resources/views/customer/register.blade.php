@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
-
-    <style>
+</head>
+<style>
         body {
             font-family: Arial, sans-serif;
             margin: 50px;
         }
-        input[type="email"], input[type="password"] {
+        input[type="email"], input[type="password"], input[type="name"] {
             width: 300px;
             padding: 10px;
             margin: 10px;
             border-radius: 5px;
+
         }
         button {
             padding: 10px 20px;
@@ -31,7 +32,7 @@
             width: 30%;
             height: auto;
             padding: 20px;
-            margin: 10px;
+            margin: 0px;
             border-radius: 10px;
         }
 
@@ -39,16 +40,17 @@
             display: flex;
             flex-direction:table-row;
             align-items:center;
-            /* justify-content: center; */
+            justify-content: center;
         }
 
-          .form-div label {
+        .form-div label {
             width: 100px;
             font-weight: bold;
         }
     </style>
-</head>
 <body>
+
+    <h2>Customer Sign Up</h2>
 
     {{-- Show validation errors --}}
     @if ($errors->any())
@@ -63,25 +65,30 @@
 
     {{-- Login Form --}}
     <div class="form-class">
-        <h2>Admin Login</h2>
-        <form method="POST" action="{{ route('admin.login.submit') }}">
+        <form method="POST" action="{{ route('customer.register.submit') }}">
             @csrf
-    
+
+            <div class="form-div">
+                <label>Name :- </label><br>
+                <input type="name" name="name" value="{{ old('name') }}" required>
+            </div>
+            <br>
+
             <div class="form-div">
                 <label>Email :- </label><br>
                 <input type="email" name="email" value="{{ old('email') }}" required>
             </div>
-    
+
             <br>
-    
+
             <div class="form-div">
                 <label>Password :- </label><br>
                 <input type="password" name="password" required>
             </div>
-    
+
             <br>
-    
-            <button type="submit">Login</button>
+
+            <button type="submit">Register</button>
         </form>
     </div>
 
@@ -89,8 +96,8 @@
 
     {{-- Register Button --}}
     <p>
-        Don’t have an account?
-        <a href="{{ route('admin.register.form') }}">Register</a>
+        Already have an account?
+        <a href="{{ route('customer.login.form') }}">Login</a>
     </p>
 
 </body>

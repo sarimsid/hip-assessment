@@ -63,8 +63,8 @@
 
     {{-- Login Form --}}
     <div class="form-class">
-        <h2>Admin Login</h2>
-        <form method="POST" action="{{ route('admin.login.submit') }}">
+        <h2>Customer Login</h2>
+        <form method="POST" action="{{ route('customer.login.submit') }}">
             @csrf
     
             <div class="form-div">
@@ -90,7 +90,7 @@
     {{-- Register Button --}}
     <p>
         Don’t have an account?
-        <a href="{{ route('admin.register.form') }}">Register</a>
+        <a href="{{ route('customer.register.form') }}">Register</a>
     </p>
 
 </body>
