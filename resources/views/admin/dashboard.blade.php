@@ -9,5 +9,6 @@
 <body>
     @include('navbar')
     
+    @include('products.index')
 </body>
 </html>

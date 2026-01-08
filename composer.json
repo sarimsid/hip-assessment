@@ -8,6 +8,8 @@
     "require": {
         "php": "^8.2",
         "laravel/framework": "^12.0",
+        "laravel/reverb": "^1.0",
+        "laravel/telescope": "^5.16",
         "laravel/tinker": "^2.10.1"
     },
     "require-dev": {
@@ -69,7 +71,7 @@
     },
     "extra": {
         "laravel": {
-            "dont-discover": []
+            "dont-discover": ["laravel/telescope"]
         }
     },
     "config": {
@@ -83,4 +85,6 @@
     },
     "minimum-stability": "stable",
     "prefer-stable": true
+
+    
 }

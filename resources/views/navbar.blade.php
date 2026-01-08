@@ -6,8 +6,13 @@
 
     <style>
         nav {
-            background-color: #f8f9fa;
-            padding: 10px;
+            background-color: #1d242c;
+            padding: 20px;
+            display: flex;
+            justify-content:end;
+            width: 100%;
+            box-sizing: border-box;
+            height: auto;
         }
         nav a {
             margin-right: 15px;
@@ -31,6 +36,7 @@
         nav button:hover {
             text-decoration: underline;
         }
+    </style>
 </head>
 <body>
 
