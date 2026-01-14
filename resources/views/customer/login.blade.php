@@ -46,6 +46,10 @@
             width: 100px;
             font-weight: bold;
         }
+
+        p a {
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
@@ -91,6 +95,10 @@
     <p>
         Don’t have an account?
         <a href="{{ route('customer.register.form') }}">Register</a>
+    </p>
+      <p>
+        Or Admin Login?
+        <a href="{{ route('admin.login.form') }}">Login</a>
     </p>
 
 </body>

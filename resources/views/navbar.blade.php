@@ -47,6 +47,8 @@
         {{-- Admin Logout --}}
         @if(Auth::guard('admin')->check())
             <a href="{{ route('admin.dashboard') }}">Home</a> |
+            <a href="{{ route('customers.index') }}">Customers</a> |
+            <a href="{{ route('admin.dashboard') }}">Products</a> |
             <form action="{{ route('admin.logout') }}" method="POST" style="display:inline;">
                 @csrf
                 <button type="submit">Logout</button>

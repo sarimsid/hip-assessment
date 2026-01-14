@@ -98,6 +98,7 @@ return [
     'cipher' => 'AES-256-CBC',
 
     'key' => env('APP_KEY'),
+    'image_api_key' => env('IMAGE_API_KEY','34334535'),
 
     'previous_keys' => [
         ...array_filter(

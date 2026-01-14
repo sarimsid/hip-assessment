@@ -33,8 +33,8 @@ class CustomerAuthController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:admins',
-            'password' => 'required|string|min:8|confirmed',
+            'email' => 'required|string|email|max:255|unique:customers',
+            'password' => 'required|string|min:6',
         ]);
 
         $customer = \App\Models\Customer::create([
